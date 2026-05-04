@@ -1,0 +1,33 @@
+/* src/pages/student/StudentDashboard.css */
+.page-container { padding: 24px; max-width: 960px; margin: 0 auto; }
+.books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.book-card {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow);
+}
+.book-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.book-cover {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.book-cover.c1 { background: linear-gradient(135deg, #2D6A4F, #52B788); }
+.book-cover.c2 { background: linear-gradient(135deg, #C2590A, #F4A261); }
+.book-cover.c3 { background: linear-gradient(135deg, #1D3557, #74B3CE); }
+.book-cover.c4 { background: linear-gradient(135deg, #6B21A8, #A855F7); }
+.book-body { padding: 16px; }
+.book-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.book-author { font-size: 12px; color: var(--ink3); margin-bottom: 12px; }
+.progress-bar { height: 5px; background: var(--warm); border-radius: 3px; margin-bottom: 6px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--green), #52B788); transition: width 0.6s; }
+.book-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink3); margin-bottom: 10px; }
+.no-books { color: var(--ink3); font-size: 14px; padding: 40px; text-align: center; }

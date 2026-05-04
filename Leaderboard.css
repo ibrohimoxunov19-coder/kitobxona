@@ -1,0 +1,21 @@
+/* src/pages/student/Leaderboard.css */
+.lb-container { padding: 24px; max-width: 900px; margin: 0 auto; }
+.filter-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.ft { padding: 7px 16px; border-radius: 20px; border: 1px solid var(--border); background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); font-size: 12px; cursor: pointer; color: var(--ink3); font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+.ft.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.ft:hover:not(.active) { background: rgba(255,255,255,0.9); color: var(--ink2); }
+.lb-table { overflow: hidden; }
+.lb-head { display: grid; grid-template-columns: 60px 1fr 120px 120px 120px; background: linear-gradient(135deg, #1C1917, #3D2B1F); color: var(--cream); padding: 14px 18px; font-size: 12px; font-weight: 500; gap: 8px; }
+.lb-row { display: grid; grid-template-columns: 60px 1fr 120px 120px 120px; padding: 13px 18px; font-size: 13px; gap: 8px; align-items: center; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.4); backdrop-filter: blur(8px); transition: background 0.15s; }
+.lb-row:last-child { border-bottom: none; }
+.lb-row:hover { background: rgba(255,255,255,0.7); }
+.lb-row.me { background: rgba(255,240,229,0.7); border-left: 3px solid var(--accent); }
+.rank { font-weight: 700; color: var(--ink3); text-align: center; }
+.rank.top1 { font-size: 20px; }
+.rank.top2 { font-size: 18px; }
+.rank.top3 { font-size: 16px; }
+.lb-name { font-weight: 500; color: var(--ink); }
+.you-tag { color: var(--accent); font-size: 12px; margin-left: 4px; }
+.lb-sub { font-size: 11px; color: var(--ink3); font-weight: 400; display: block; }
+.lb-ball { text-align: center; font-weight: 500; color: var(--ink2); }
+.lb-ball.total { color: var(--accent); font-weight: 700; font-size: 15px; }

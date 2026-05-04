@@ -1,0 +1,66 @@
+/* src/pages/student/BookReader.css */
+.reader-container { padding: 24px; max-width: 860px; margin: 0 auto; }
+.reader-header {
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.reader-info h2 { font-family: 'Playfair Display', serif; font-size: 18px; }
+.reader-info p { font-size: 12px; color: var(--ink3); margin-top: 3px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(237,230,218,0.7);
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.timer-icon { font-size: 18px; }
+.timer-val { font-size: 20px; font-weight: 600; color: var(--accent); font-family: monospace; }
+.timer-label { font-size: 11px; color: var(--ink3); }
+.chapter-nav { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.ch-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--ink2);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+}
+.ch-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.ch-btn:hover:not(.active) { background: rgba(255,255,255,0.9); }
+.reader-content {
+  padding: 32px;
+  margin-bottom: 14px;
+  min-height: 300px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink2);
+}
+.reader-content h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 20px; color: var(--ink); }
+.reader-content p { margin-bottom: 16px; }
+.pdf-notice { text-align: center; padding: 40px; }
+.pdf-notice a { color: var(--accent); font-weight: 500; }
+.reader-footer {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.test-unlock { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 10px; font-size: 20px; }
+.test-unlock.unlocked { background: rgba(234,244,238,0.8); border: 1px solid #B7DFC6; }
+.test-unlock.locked { background: rgba(237,230,218,0.6); border: 1px solid var(--border); }
+.unlock-text { font-size: 13px; font-weight: 500; color: var(--green); }
+.unlock-text.locked { color: var(--ink3); }
+.unlock-sub { font-size: 11px; color: var(--ink3); }
