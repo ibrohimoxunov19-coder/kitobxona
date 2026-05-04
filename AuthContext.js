@@ -1,0 +1,55 @@
+// src/context/AuthContext.js
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../firebase";
+
+const AuthContext = createContext();
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
+
+export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userRole, setUserRole] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  async function login(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+
+  async function logout() {
+    return signOut(auth);
+  }
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setUserData(data);
+          setUserRole(data.role);
+        }
+        setCurrentUser(user);
+      } else {
+        setCurrentUser(null);
+        setUserRole(null);
+        setUserData(null);
+      }
+      setLoading(false);
+    });
+    return unsubscribe;
+  }, []);
+
+  const value = { currentUser, userRole, userData, login, logout, loading };
+
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
+}
