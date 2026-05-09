@@ -157,3 +157,4 @@ cloudflare-worker/
 ## 📞 Yordam
 
 Savollar bo'lsa, loyiha egasi bilan bog'laning.
+shunaqa gaplar
